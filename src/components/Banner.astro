@@ -1,8 +1,22 @@
-<div class="flex flex-row">
-    <img src="" alt="" class="size-96">
-    <section class="flex flex-col">
-        <p>
+---
+import GitHubIcon from "../icons/GitHubIcon.astro";
+import LinkedInIcon from "../icons/LinkedInIcon.astro";
+import SocialPill from "./SocialPill.astro";
+---
 
+<div class="flex md:flex-row flex-col justify-center items-center mt-4">
+    <img src="/src/assets/Me.jpeg" alt="" class="size-36 rounded-full">
+    <section class="flex flex-col mt-4 justify-center items-center">
+        <p class="flex justify-center items-center w-full px-4 text-center">
+            My name is Eddy Alejandro Guerra Rubio, I am a professional software developer. Currently, I serve as a Frontend Development Team Lead at Citmatel, where I build intuitive and scalable user interfaces. I hope you find my profile appealing.
         </p>
+        <section class="flex flex-row space-x-4">
+            <SocialPill href="https://www.linkedin.com/in/eddy-alejandro-guerra-rubio-075224333/">
+                    <LinkedInIcon class="size-10"/>
+            </SocialPill>
+            <SocialPill href="https://www.linkedin.com/in/eddy-alejandro-guerra-rubio-075224333/">
+                    <GitHubIcon class="size-10"/>
+            </SocialPill>
+        </section>
     </section>
 </div>
