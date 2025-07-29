@@ -3,7 +3,7 @@ import Navbar from '../components/Navbar.astro'
 import '../styles/global.css'
 ---
 <!doctype html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
@@ -11,8 +11,8 @@ import '../styles/global.css'
 		<meta name="generator" content={Astro.generator} />
 		<title>Aleehks</title>
 	</head>
-	<body class="flex items-center text-white justify-center flex-col">
-		<div class="absolute inset-0 -z-10 h-full w-full items-center px-5 py-24 [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#63e_100%)]"></div>
+	<body class="flex items-center w-screen min-h-screen relative text-white justify-center flex-col">
+		<div class="absolute top-0 inset-0 -z-10 min-h-screen w-full items-center px-5 py-24 [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#63e_100%)]"></div>
 		<Navbar/>
 		<slot />
 	</body>

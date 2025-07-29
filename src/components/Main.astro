@@ -1,12 +1,18 @@
 ---
 import Banner from "./Banner.astro";
+import Experience from "./Experience.astro";
+import Projects from "./Projects.astro";
 ---
 
 <div class="flex justify-center items-center flex-col mt-72">
 <section class="flex flex-col items-center" ="aboutme">
-    <h1 class="font-bold text-4xl">
+    <h1 class="font-bold text-4xl" id="aboutme">
         About Me
     </h1>
     <Banner/>
+    <h1 class="font-bold text-4xl mt-52" id="experience">Experience</h1>
+    <Experience/>
+    <h1 class="font-bold text-4xl mt-52 mb-10">Projects</h1>
+    <Projects/>
 </section>
 </div>

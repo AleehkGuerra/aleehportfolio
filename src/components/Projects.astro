@@ -1,0 +1,25 @@
+---
+import ProjectCard from "./ProjectCard.astro";
+
+const PROJECTS = [
+  {
+    title: "INSMET",
+    description:
+      "A SaaS developed for the National Institute of Metheorology. A site that includes dinamyc control of the climate variables, forecast, and articles. developed using React + Django",
+    link: "http://169.158.128.57:5173/",
+    image: "src/assets/INSMET.png",
+  },
+];
+---
+
+<div class="flex">
+  <ol class="grid grid-cols-1">
+    {
+      PROJECTS.map((project) => (
+        <li class="mb-4 hover:scale-110 transition delay-150 duration-300 ease-in-out">
+          <ProjectCard {...project} />
+        </li>
+      ))
+    }
+  </ol>
+</div>

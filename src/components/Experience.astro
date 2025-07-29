@@ -1,0 +1,45 @@
+---
+import ExperienceItem from "./ExperienceItem.astro"
+
+const EXPERIENCE = [
+    {
+        title : 'Citmatel',
+        date: 'February 2025',
+        description : 'Currently working as a frontend engineer at Citmatel'
+    },
+    {
+        title : 'CESIM',
+        date: 'september 2024',
+        description : 'Work as a frontend engineer creating a AI module for the project administration app GAPID'
+    }
+]
+---
+<style>
+    @keyframes appear{
+        from{
+            opacity: 0;
+            scale: 0.5;
+        }
+        to{
+            opacity: 1;
+            scale: 1;
+        }
+    }
+    .scroll-block{
+        animation: appear linear;
+        animation-timeline: view();
+        animation-range: entry 0% cover 40%;
+    }
+</style>
+<div class="flex flex-col">
+<ol class="items-center sm:flex px-2">
+    {
+        EXPERIENCE.map(experience =>(
+                <li class="relative scroll-block mb-6 sm:mb-0">
+                <ExperienceItem {...experience}/>
+                </li>
+        ))
+    }
+    
+</ol>
+</div>
