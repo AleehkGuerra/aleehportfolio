@@ -1,0 +1,20 @@
+---
+import ContactButton from "./ContactButton.astro"
+
+const CONTACT = [
+    {
+        title:'Mail',
+        imagelink:'/Logos/mail.svg',
+        link:'mailto:aleehguerra@gmail.com'
+    },
+]
+---
+<div class="flex mb-10">
+    <ol class="flex flex-row">
+        {CONTACT.map(contact=>(
+            <li>
+                <ContactButton {...contact}/>
+            </li>
+        ))}
+    </ol>
+</div>

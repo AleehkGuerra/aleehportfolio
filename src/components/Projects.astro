@@ -12,11 +12,11 @@ const PROJECTS = [
 ];
 ---
 
-<div class="flex">
+<div class="flex px-10">
   <ol class="grid grid-cols-1">
     {
       PROJECTS.map((project) => (
-        <li class="mb-4 hover:scale-110 transition delay-150 duration-300 ease-in-out">
+        <li class="mb-10 hover:scale-110 transition delay-150 duration-300 ease-in-out">
           <ProjectCard {...project} />
         </li>
       ))
