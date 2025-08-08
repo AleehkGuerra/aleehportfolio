@@ -1,0 +1,56 @@
+---
+import TechCard from "./TechCard.astro";
+
+const TECH = [
+    { label: 'JAVASCRIPT', icon: 'Logos/javascript.svg' },
+    { label: 'HTML', icon: 'Logos/html5.svg' },
+    { label: 'CSS', icon: 'Logos/css_old.svg' },
+    { label: 'JAVA', icon: 'Logos/java.svg' },
+    { label: 'PYTHON', icon: 'Logos/python.svg' },
+    { label: 'TAILWINDCSS', icon: 'Logos/tailwindcss.svg' },
+    { label: 'WORDPRESS', icon: 'Logos/wordpress.svg' },
+    { label: 'ASTRO', icon: 'Logos/astro_dark.svg' }
+];
+---
+
+<style>
+    .tech-item {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    }
+    
+    .tech-item.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+</style>
+
+<div class="hidden md:block">
+    <ol class="grid grid-cols-4 gap-4" id="tech-list">
+        {TECH.map((techitem, index) => (
+            <li class="tech-item" style={`transition-delay: ${index * 100}ms`}>
+                <TechCard {...techitem} />
+            </li>
+        ))}
+    </ol>
+</div>
+
+<script is:inline>
+    document.addEventListener('DOMContentLoaded', () => {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        document.querySelectorAll('.tech-item').forEach(item => {
+            observer.observe(item);
+        });
+    });
+</script>
